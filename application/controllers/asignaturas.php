@@ -29,6 +29,15 @@ class Asignaturas extends CI_Controller {
 			);
 		$this->asignatura_model->crearAsignatura($datos);
 
+		$url=array(
+			'continuar'=>base_url(),
+			'otro'=>base_url().'index.php/asignaturas/nuevo'
+
+			);
+		$this->load->view('encabezado');
+		$this->load->view('confirmacion',$url);
+
+
 
 
 	}

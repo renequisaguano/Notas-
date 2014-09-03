@@ -35,8 +35,16 @@ class Alumnos extends CI_Controller {
 			'TELEFONO_EST'=>$this->input->post('TELEFONO_EST')
 			);
 		$this->alumno_model->crearAlumno($data);
+		
+
+		$url=array(
+			'continuar'=>base_url(),
+			'otro'=>base_url().'index.php/alumnos/nuevo'
+
+			);
 		$this->load->view('encabezado');
-		$this->load->view('confirmacion');
+		$this->load->view('confirmacion',$url);
+
 		}
 
 
