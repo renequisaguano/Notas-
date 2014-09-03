@@ -7,6 +7,7 @@ class Alumnos extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->helper('form');
+		$this->load->helper('url');
 		$this->load->model('alumno_model');
 
 	}
@@ -34,7 +35,9 @@ class Alumnos extends CI_Controller {
 			'TELEFONO_EST'=>$this->input->post('TELEFONO_EST')
 			);
 		$this->alumno_model->crearAlumno($data);
-	}
+		$this->load->view('encabezado');
+		$this->load->view('confirmacion');
+		}
 
 
 
